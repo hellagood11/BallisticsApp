@@ -16,6 +16,43 @@ class Cartridge:
         self.kineticEnergy_Imperial = (grains * (velocity ** 2)) / 450436  # foot-pounds (ft-lbs)
         self.momentum_Imperial = (grains * velocity) / 225218              # pound-seconds (lbs-sec)
 
+def load_ammo_table():
+    """Reads the custom metrics CSV file and builds an HTML table string."""
+    try:
+        html_table = """
+        <table class='data-table'>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Cartridge</th>
+                    <th>Type</th>
+                    <th>Velocity (FPS)</th>
+                    <th>Energy (ft-lbs)</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+        """
+        
+        with open("ammo.csv", mode="r") as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                html_table += f"""
+                <tr>
+                    <td><strong>#{row['Ranking']}</strong></td>
+                    <td>{row['Cartridge']}</td>
+                    <td>{row['Type'].capitalize()}</td>
+                    <td>{row['FPS']}</td>
+                    <td>{row['Energy']}</td>
+                    <td>{float(row['Score']):.3f}</td>
+                </tr>
+                """
+        
+        html_table += "</tbody></table>"
+        document.querySelector("#table-output").innerHTML = html_table
+    except Exception as e:
+        document.querySelector("#table-output").innerText = f"Error loading CSV: {str(e)}"
+
 @when("click", "#calc-btn")
 def calculate(event):
     # Grab inputs safely
@@ -42,3 +79,5 @@ def calculate(event):
         
     except ValueError:
         pass
+
+load_ammo_table()
