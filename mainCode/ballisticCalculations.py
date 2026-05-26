@@ -1,4 +1,5 @@
 from pyscript import document, when
+import csv
 class Cartridge:
     def __init__(self, grains, velocity):
         self.grains = grains
@@ -34,7 +35,7 @@ def load_ammo_table():
             <tbody>
         """
         
-        with open("ammo.csv", mode="r") as file:
+        with open("CartridgeBallistics.csv", mode="r") as file:
             reader = csv.DictReader(file)
             for row in reader:
                 html_table += f"""
