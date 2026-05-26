@@ -22,15 +22,22 @@
         <label for="velocity">Velocity (FPS):</label>
         <input type="number" id="velocity" placeholder="e.g., 1150">
     </div>
-    <button py-click="calculate">Calculate</button>
+    <button id="calc-btn">Calculate</button>
 
     <div class="results">
-        <p><strong>Kinetic Energy:</strong> <span id="energy-out">0</span> ft-lbs</p>
-        <p><strong>Momentum:</strong> <span id="momentum-out">0</span> lbs-sec</p>
+        <h3>Imperial Units</h3>
+        <p><strong>Kinetic Energy:</strong> <span id="energy-imp">0</span> ft-lbs</p>
+        <p><strong>Momentum:</strong> <span id="momentum-imp">0</span> lbs-sec</p>
+        
+        <hr>
+        
+        <h3>Metric Units</h3>
+        <p><strong>Kinetic Energy:</strong> <span id="energy-metric">0</span> Joules</p>
+        <p><strong>Momentum:</strong> <span id="momentum-metric">0</span> kg·m/s</p>
     </div>
 </div>
 
-<script type="py" src="calculator.py"></script>
+<script type="py" src="ballisticCalculations.py"></script>
 
 </body>
 </html>

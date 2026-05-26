@@ -51,3 +51,13 @@ button:hover {
     background: #e9ecef;
     border-radius: 4px;
 }
+
+button.py-loading {
+    background-color: #cccccc !important;
+    color: #666666 !important;
+    cursor: not-allowed !important;
+}
+
+button {
+    transition: background-color 0.3s ease;
+}
