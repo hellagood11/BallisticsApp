@@ -1,5 +1,4 @@
 from pyscript import document, when
-
 class Cartridge:
     def __init__(self, grains, velocity):
         self.grains = grains
