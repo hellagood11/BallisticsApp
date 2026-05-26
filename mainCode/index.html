@@ -12,38 +12,39 @@
     </head>
     <body>
 
-        <div class="container">
-            <h2>Ballistics Calculator</h2>
-            <div class="input-group">
-                <label for="grains">Bullet Weight (Grains):</label>
-                <input type="number" id="grains" placeholder="e.g., 124">
-            </div>
-            <div class="input-group">
-                <label for="velocity">Velocity (FPS):</label>
-                <input type="number" id="velocity" placeholder="e.g., 1150">
-            </div>
-            <button id="calc-btn">Calculate</button>
+        <div class="dashboard-wrapper">
+            <div class="calculator-card">
+                <h2>Ballistics Calculator</h2>
+                <div class="input-group">
+                    <label for="grains">Bullet Weight (Grains):</label>
+                    <input type="number" id="grains" placeholder="e.g., 124">
+                </div>
+                <div class="input-group">
+                    <label for="velocity">Velocity (FPS):</label>
+                    <input type="number" id="velocity" placeholder="e.g., 1150">
+                </div>
+                <button id="calc-btn">Calculate</button>
 
-            <div class="results">
-                <h3>Imperial Units</h3>
-                <p><strong>Kinetic Energy:</strong> <span id="energy-imp">0</span> ft-lbs</p>
-                <p><strong>Momentum:</strong> <span id="momentum-imp">0</span> lbs-sec</p>
-                
-                <hr>
-                
-                <h3>Metric Units</h3>
-                <p><strong>Kinetic Energy:</strong> <span id="energy-metric">0</span> Joules</p>
-                <p><strong>Momentum:</strong> <span id="momentum-metric">0</span> kg·m/s</p>
+                <div class="results">
+                    <h3>Imperial Units</h3>
+                    <p><strong>Kinetic Energy:</strong> <span id="energy-imp">0</span> ft-lbs</p>
+                    <p><strong>Momentum:</strong> <span id="momentum-imp">0</span> lbs-sec</p>
+                    
+                    <hr>
+                    
+                    <h3>Metric Units</h3>
+                    <p><strong>Kinetic Energy:</strong> <span id="energy-metric">0</span> Joules</p>
+                    <p><strong>Momentum:</strong> <span id="momentum-metric">0</span> kg·m/s</p>
+                </div>
             </div>
 
-            <div class="ammo-table-container">
-                <h3>Known Ammunition Index</h3>
-                <div id="table-output">Loading custom index matrix...</div>
+            <div class="table-card">
+                 <h3>Known Ammunition Index</h3>
+                 <div id="table-output">Loading custom index matrix...</div>
             </div>
 
         </div>
-
+        
     <script type="py" src="ballisticCalculations.py" config="pyscript.json"></script>
-
     </body>
 </html>
