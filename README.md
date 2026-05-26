@@ -17,3 +17,10 @@ Ballistic coeffectient
 : a measure of a bullet's relative ability to overcome air resistance.
 Each bullet can be assigned a numeric value that expresses this efficency. The main basis of this value is a ratio comparing the performance characteristics of a particular bullet against the known trajectory characteristics of a standard projectile. Specifically, this ratio compares the drag of a bullet (loss of velo caused by air resistance in flight) to the drag of the standard projectile. The formula is: BC = Drag of standard projectile / Drag of test projectile.
 
+## Terminal Ballistics
+Terminal Ballistics
+: The study of how a projectile behaves when it hits its target and transfers its kinetic energy to the target.
+Permanent Cavitation
+: Hole created as bullet passes through target. Channel is same diameter as bullet and is a function of the rounds penetration and expansion
+Temporary Cavitation
+: The "waves" that are caused from the impact and travel of the bullet through tissue
