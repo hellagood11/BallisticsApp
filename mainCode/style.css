@@ -151,6 +151,39 @@ button {
     background-color: #f1f1f1;
 }
 
+.graph-card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 30px; /* Pushes card elegantly below the side-by-side layout wrappers */
+}
+
+.graph-sub {
+    color: #666;
+    margin: -10px 0 20px 0;
+    font-size: 0.9rem;
+}
+
+#graph-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px;
+    background: #fafafa;
+    border: 1px dashed #ccc;
+    border-radius: 6px;
+    padding: 15px;
+}
+
+.loading-text {
+    color: #888;
+    font-style: italic;
+}
+
 /* Mobile Responsive Override: Automatically transforms into single column view on phones */
 @media (max-width: 900px) {
     .dashboard-wrapper {

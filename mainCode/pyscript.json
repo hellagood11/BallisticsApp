@@ -1,4 +1,5 @@
 {
+    "packages": ["matplotlib"],
     "files": {
         "./CartridgeBallistics.csv": "./CartridgeBallistics.csv"
     }
