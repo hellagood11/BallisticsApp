@@ -75,18 +75,6 @@ def generate_trajectory_plot(custom_vel):
     pyscript.display(fig, target="graph-output")
 
 def load_ammo_table():
-    try:
-        html_table = "<table class='data-table'><thead><tr><th>Rank</th><th>Cartridge</th><th>Type</th><th>Velocity (FPS)</th><th>Energy (ft-lbs)</th><th>Score</th></tr></thead><tbody>"
-        with open("ammo.csv", mode="r") as file:
-            reader = csv.DictReader(file)
-            for row in reader:
-                html_table += f"<tr><td><strong>#{row['Ranking']}</strong></td><td>{row['Cartridge']}</td><td>{row['Type'].capitalize()}</td><td>{row['FPS']}</td><td>{row['Energy']}</td><td>{float(row['Score']):.3f}</td></tr>"
-        html_table += "</tbody></table>"
-        document.querySelector("#table-output").innerHTML = html_table
-    except Exception as e:
-        document.querySelector("#table-output").innerText = f"Error loading CSV: {str(e)}"
-
-def load_ammo_table():
     """Reads the custom metrics CSV file and builds an HTML table string."""
     try:
         html_table = """
@@ -128,7 +116,7 @@ def calculate(event):
     # Grab inputs safely
     grains_input = document.querySelector("#grains").value
     velocity_input = document.querySelector("#velocity").value
-    
+
     if not grains_input or not velocity_input:
         return
 
