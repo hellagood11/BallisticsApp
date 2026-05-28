@@ -11,13 +11,20 @@
         <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
     </head>
     <body>
-        <div class="app-header">
-            <h1>Ballistics & Ammunition Analytics Dashboard</h1>
-            <p>Real-time physics calculation and multi-criteria performance mapping</p>
-        </div>
+        <nav class="app-nav">
+            <div class="nav-brand">
+                <h1>Ballistics & Ammunition Analytics Dashboard</h1>
+                <p>Real-time physics calculation and multi-criteria performance mapping</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#calculator">Calculator</a></li>
+                <li><a href="#ammo-index">Ammo Index</a></li>
+                <li><a href="#trajectory">Trajectory</a></li>
+            </ul>
+        </nav>
         
         <div class="dashboard-wrapper">
-            <div class="calculator-card">
+            <div class="calculator-card" id="calculator">
                 <h2>Ballistics Calculator</h2>
                 <div class="input-group">
                     <label for="grains">Bullet Weight (Grains):</label>
@@ -42,7 +49,7 @@
                 </div>
             </div>
 
-            <div class="table-card">
+                <div class="table-card" id="ammo-index">
                  <h3>Known Ammunition Index</h3>
                  <div class="table-scroll-container"> 
                     <div id="table-output">Loading custom index matrix...</div>
@@ -51,7 +58,7 @@
 
         </div>
 
-        <div class="graph-card">
+        <div class="graph-card" id="trajectory">
             <h3>Trajectory Drop Comparison (Inches vs Yards)</h3>
             <p class="graph-sub">Comparing your custom input against indexing standards</p>
             <div id="graph-output">
