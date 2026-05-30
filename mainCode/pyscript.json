@@ -1,6 +1,8 @@
 {
     "packages": ["matplotlib"],
     "files": {
-        "./CartridgeBallistics.csv": "./CartridgeBallistics.csv"
+        "./CartridgeBallistics.csv": "./CartridgeBallistics.csv",
+        "./pistolReloading.csv": "./pistolReloading.csv",
+        "./rifleReloading.csv": "./rifleReloading.csv"
     }
 }

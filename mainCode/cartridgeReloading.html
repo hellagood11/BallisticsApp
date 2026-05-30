@@ -6,6 +6,8 @@
         <title>Cartridge Reloading</title>
 
         <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+        <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
     </head>
     <body>
         <nav class="app-nav">
@@ -21,10 +23,33 @@
 
         <div class="page-card" id="cartridge-overview">
             <h2>Cartridge Reloading</h2>
-            <p>
-                This page is reserved for your cartridge reloading tools, reference values,
-                and workflow notes. You can now access it directly from the main page navbar.
-            </p>
+            <p>Filter both pistol and rifle reloading data by source and cartridge.</p>
+
+            <div class="filter-controls">
+                <div class="input-group">
+                    <label for="source-filter">Source:</label>
+                    <select id="source-filter">
+                        <option value="All">All Sources</option>
+                        <option value="Pistol">Pistol</option>
+                        <option value="Rifle">Rifle</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="cartridge-filter">Cartridge:</label>
+                    <select id="cartridge-filter">
+                        <option value="All">All Cartridges</option>
+                    </select>
+                </div>
+            </div>
+
+            <p id="reload-summary" class="graph-sub">Loading reloading data...</p>
+
+            <div class="table-scroll-container">
+                <div id="reload-table-output">Loading...</div>
+            </div>
         </div>
+
+        <script type="py" src="cartridgeReloading.py" config="pyscript.json"></script>
     </body>
 </html>

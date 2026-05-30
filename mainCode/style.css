@@ -115,6 +115,12 @@ body {
     margin-bottom: 15px;
 }
 
+.filter-controls {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 16px;
+}
+
 label {
     display: block;
     margin-bottom: 5px;
@@ -127,6 +133,15 @@ input {
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
 }
 
 button {
@@ -255,6 +270,11 @@ button {
         flex-direction: column;
         align-items: stretch;
     }
+
+    .filter-controls {
+        grid-template-columns: 1fr;
+    }
+
     .calculator-card {
         flex: 1 1 auto;
     }
