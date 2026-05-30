@@ -1,7 +1,10 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0px;
-    background-color: #f4f4f9;
+    background:
+        radial-gradient(circle at 15% 20%, #e8f2ff 0%, rgba(232, 242, 255, 0) 45%),
+        radial-gradient(circle at 85% 80%, #eafaf2 0%, rgba(234, 250, 242, 0) 42%),
+        linear-gradient(160deg, #f4f8ff 0%, #f7fbf7 100%);
     padding: 0 0 40px 0;
     display: flex;
     flex-direction: column;
@@ -17,12 +20,12 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 24px;
-    background: #ffffff;
-    border: 2px solid #4f5664;
+    background: rgba(252, 254, 255, 0.94);
+    border: 2px solid #8ea0bb;
     border-left: none;
     border-right: none;
     border-radius: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(28, 42, 68, 0.14);
     padding: 18px 22px;
     position: sticky;
     top: 0;
@@ -32,14 +35,14 @@ body {
 }
 
 .nav-brand h1 {
-    color: #1a1a2e;
+    color: #24344d;
     margin: 0 0 6px 0;
     font-size: 1.6rem;
     font-weight: 700;
 }
 
 .nav-brand p {
-    color: #666;
+    color: #5e6f86;
     margin: 0;
     font-size: 0.95rem;
 }
@@ -55,17 +58,17 @@ body {
 .nav-links a {
     display: inline-block;
     text-decoration: none;
-    color: #1a1a2e;
+    color: #1f3555;
     font-weight: 600;
-    background: #e9ecef;
-    border: 1px solid #ccd1d6;
+    background: #eaf1fb;
+    border: 1px solid #b8c8dd;
     border-radius: 6px;
     padding: 8px 12px;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .nav-links a:hover {
-    background: #007BFF;
+    background: #2f7dd3;
     color: #ffffff;
 }
 .dashboard-wrapper {
@@ -78,11 +81,11 @@ body {
 }
 
 .calculator-card, .table-card {
-    background: white;
+    background: #fdfefe;
     padding: 25px;
     border-radius: 8px;
-    border: 2px solid #4f5664;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 2px solid #8fa6be;
+    box-shadow: 0 10px 28px rgba(28, 42, 68, 0.12);
     box-sizing: border-box;
 }
 
@@ -99,16 +102,16 @@ body {
     overflow-y: auto;     
     overflow-x: auto;     
     position: relative;   
-    border: 1px solid #eee; 
+    border: 1px solid #dbe3ee; 
 }
 
 .container {
     max-width: 650px;
     width: 100%;
-    background: white;
+    background: #fdfefe;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 28px rgba(28, 42, 68, 0.12);
 }
 
 .input-group {
@@ -131,15 +134,16 @@ input {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 1px solid #b8c8dd;
     border-radius: 4px;
+    background: #ffffff;
 }
 
 select {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 1px solid #b8c8dd;
     border-radius: 4px;
     background: #fff;
 }
@@ -147,7 +151,7 @@ select {
 button {
     width: 100%;
     padding: 10px;
-    background: #007BFF;
+    background: linear-gradient(135deg, #2f7dd3 0%, #2d65c2 100%);
     color: white;
     border: none;
     border-radius: 4px;
@@ -156,13 +160,13 @@ button {
 }
 
 button:hover {
-    background: #0056b3;
+    background: linear-gradient(135deg, #296db8 0%, #2758a7 100%);
 }
 
 .results {
     margin-top: 20px;
     padding: 10px;
-    background: #e9ecef;
+    background: #edf3fb;
     border-radius: 4px;
 }
 
@@ -194,7 +198,7 @@ button {
 }
 
 .data-table th {
-    background-color: #007BFF;
+    background-color: #2f7dd3;
     color: white;
     position: sticky;
     top: 0;
@@ -202,19 +206,19 @@ button {
 }
 
 .data-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f3f7fd;
 }
 
 .data-table tr:hover {
-    background-color: #f1f1f1;
+    background-color: #e6eef9;
 }
 
 .graph-card {
-    background: white;
+    background: #fdfefe;
     padding: 25px;
     border-radius: 8px;
-    border: 2px solid #4f5664;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 2px solid #8fa6be;
+    box-shadow: 0 10px 28px rgba(28, 42, 68, 0.12);
     box-sizing: border-box;
     width: min(1200px, calc(100% - 40px));
     max-width: 1200px;
@@ -222,18 +226,18 @@ button {
 }
 
 .page-card {
-    background: white;
+    background: #fdfefe;
     padding: 25px;
     border-radius: 8px;
-    border: 2px solid #4f5664;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 2px solid #8fa6be;
+    box-shadow: 0 10px 28px rgba(28, 42, 68, 0.12);
     box-sizing: border-box;
     width: min(1200px, calc(100% - 40px));
     max-width: 1200px;
 }
 
 .graph-sub {
-    color: #666;
+    color: #617693;
     margin: -10px 0 20px 0;
     font-size: 0.9rem;
 }
@@ -243,14 +247,14 @@ button {
     justify-content: center;
     align-items: center;
     min-height: 250px;
-    background: #fafafa;
-    border: 1px dashed #ccc;
+    background: #f4f8fd;
+    border: 1px dashed #b4c4d9;
     border-radius: 6px;
     padding: 15px;
 }
 
 .loading-text {
-    color: #888;
+    color: #6f7f95;
     font-style: italic;
 }
 
