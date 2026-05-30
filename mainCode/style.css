@@ -206,6 +206,17 @@ button {
     margin-top: 30px; /* Pushes card elegantly below the side-by-side layout wrappers */
 }
 
+.page-card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    border: 2px solid #4f5664;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    width: min(1200px, calc(100% - 40px));
+    max-width: 1200px;
+}
+
 .graph-sub {
     color: #666;
     margin: -10px 0 20px 0;
