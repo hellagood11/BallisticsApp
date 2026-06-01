@@ -1,26 +1,12 @@
 # BallisticsApp
-App to make ballistic calculations based on user input.
+This is a webapp that immplements many different useful tools surrounding projectile ballistics. 
 
-## Kinetic Energy
-One of the biggest determinants of a bullets penetration and effectiveness is its kinetic energy. We can calculate this by substituting the bullets weight and expected velocity into the kinetic energy equation:
-$Ke = 1/2mv^2$
-
-## Momentum
-Momentum also plays a large part in the effectiveness of a round. In this case, rounds with higher momentum are less vulnerable to resistance from the material they are traveling through. We can calculate momentum by plugging in the bullets mass and expected velocity in to the momentum equation: 
-$p = mv$
-
-## External Ballistics 
-**Gravity** and **Air Resistance** have a very strong impact on the flight of a bullet. As soon as a bullet leaves the barrel, air resistance begins to make the bullet lose velocity and gravity makes the bullet lose height. This results in a parabolic trajectory and flight. In fact, gravity and air resistance play such a part in the flight of the bullet that the bullets departure line is tangent to the trajectory of the bullet only at the muzzle. Immediately, the trajectory drops below the bore axis/departure line. The angle of departure is formed by the intersection of the line of departure and the horozontal line of sight "baseline". 
-
-### Ballistic Coeffecient
-Ballistic coeffectient
-: a measure of a bullet's relative ability to overcome air resistance.
-Each bullet can be assigned a numeric value that expresses this efficency. The main basis of this value is a ratio comparing the performance characteristics of a particular bullet against the known trajectory characteristics of a standard projectile. Specifically, this ratio compares the drag of a bullet (loss of velo caused by air resistance in flight) to the drag of the standard projectile. The formula is: BC = Drag of standard projectile / Drag of test projectile.
-
-## Terminal Ballistics
-Terminal Ballistics
-: The study of how a projectile behaves when it hits its target and transfers its kinetic energy to the target.
-Permanent Cavitation
-: Hole created as bullet passes through target. Channel is same diameter as bullet and is a function of the rounds penetration and expansion
-Temporary Cavitation
-: The "waves" that are caused from the impact and travel of the bullet through tissue
+## Features 
+### Energy Calculator
+This is a calculator that gives the user the ability to input a projectiles' weight in grains and velocity in feet per second to obain the energy and momentum that the projectile produces in both metric and standard units.
+### Known Cartridge Table
+This is a table of known cartridges, their velocites, energies and other information that could be relevant to a user to determine the usefulness of a round. The score section is an aggregated and weighted score of the different categories of each round to give a ranking of all the rounds in the list.
+### Trajectory Estimation
+This graph takes the input of the user for weight and velocity and makes a graphical esitmation of the travel of the bullet. It shows the amount of drop that the bullet would have at distances out to 300 yards. This could provide users useful information about a cartridge they are going to use.
+### Reloading information
+This feature gives the user important basic information about reloading different cartridges. The user has the ability to filter the table by firearm type that uses them or by the cartridge itself. This table gives the information about the type of bullet that is used, what kind of powder, how much to use, and what the velocity would be based on each amount of powder used.  
