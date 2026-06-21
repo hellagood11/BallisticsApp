@@ -1,5 +1,5 @@
 # BallisticsApp
-This is a webapp that immplements many different useful tools surrounding projectile ballistics. 
+This is a webapp that uses PyScript to immplement many different useful tools surrounding projectile ballistics. 
 
 ## Features 
 ### Energy Calculator

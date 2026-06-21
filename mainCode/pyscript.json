@@ -1,5 +1,5 @@
 {
-    "packages": ["matplotlib"],
+    "packages": ["matplotlib", "py-ballisticcalc"],
     "files": {
         "./CartridgeBallistics.csv": "./CartridgeBallistics.csv",
         "./pistolReloading.csv": "./pistolReloading.csv",

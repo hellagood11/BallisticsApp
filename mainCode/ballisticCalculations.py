@@ -1,7 +1,10 @@
+# ballisticCalculations.py - Core logic for ballistic computations and dynamic graph rendering in the Ballistics App
 from pyscript import document, when
 import csv
 import matplotlib.pyplot as plt
 import pyscript
+
+#Cartridge class to encapsulate ballistic properties and calculations for a given bullet weight and velocity, providing both metric and imperial outputs
 class Cartridge:
     def __init__(self, grains, velocity):
         self.grains = grains
@@ -19,6 +22,7 @@ class Cartridge:
         self.kineticEnergy_Imperial = (grains * (velocity ** 2)) / 450436  # foot-pounds (ft-lbs)
         self.momentum_Imperial = (grains * velocity) / 225218              # pound-seconds (lbs-sec)
 
+#Function to calculate the bullet drop curve based on a given velocity, returning distances and corresponding drop values for plotting
 def calculate_drop_curve(velocity):
     """Calculates bullet gravity drop in inches for distances up to 300 yards."""
     distances = list(range(0, 305, 10)) # 0 to 300 yards in 10-yard jumps
@@ -35,6 +39,7 @@ def calculate_drop_curve(velocity):
         
     return distances, drops
 
+#Function to read the custom ballistics CSV file and generate an HTML table for display, including error handling for file access issues
 def generate_trajectory_plot(custom_vel):
     """Generates a matplotlib vector chart and injects it straight into the DOM."""
     # Clear any previous figures to prevent memory leak stacking
@@ -74,6 +79,7 @@ def generate_trajectory_plot(custom_vel):
     document.querySelector("#graph-output").innerHTML = ""
     pyscript.display(fig, target="graph-output")
 
+# Function to load the custom ballistics CSV file and generate an HTML table for display, including error handling for file access issues
 def load_ammo_table():
     """Reads the custom metrics CSV file and builds an HTML table string."""
     try:
@@ -111,6 +117,7 @@ def load_ammo_table():
     except Exception as e:
         document.querySelector("#table-output").innerText = f"Error loading CSV: {str(e)}"
 
+#Event listener for the calculate button to trigger ballistic calculations and dynamic graph rendering based on user input, with error handling for invalid inputs
 @when("click", "#calc-btn")
 def calculate(event):
     # Grab inputs safely
@@ -141,4 +148,5 @@ def calculate(event):
     except ValueError:
         pass
 
+# Initial load of the custom ballistics table when the script runs
 load_ammo_table()

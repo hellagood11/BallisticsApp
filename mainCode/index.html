@@ -11,6 +11,7 @@
         <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
     </head>
     <body>
+        <!-- Navigation Bar -->
         <nav class="app-nav">
             <div class="nav-brand">
                 <h1>Ballistics & Ammunition Analytics Dashboard</h1>
@@ -22,7 +23,9 @@
             </ul>
         </nav>
         
+
         <div class="dashboard-wrapper">
+            <!-- Ballistics Calculator Card -->
             <div class="calculator-card" id="calculator">
                 <h2>Ballistics Calculator</h2>
                 <div class="input-group">
@@ -34,20 +37,21 @@
                     <input type="number" id="velocity" placeholder="e.g., 1150">
                 </div>
                 <button id="calc-btn">Calculate</button>
-
+                <!-- Results Display -->
                 <div class="results">
+                    <!-- Imperial -->
                     <h3>Imperial Units</h3>
                     <p><strong>Kinetic Energy:</strong> <span id="energy-imp">0</span> ft-lbs</p>
                     <p><strong>Momentum:</strong> <span id="momentum-imp">0</span> lbs-sec</p>
                     
                     <hr>
-                    
+                    <!-- Metric -->
                     <h3>Metric Units</h3>
                     <p><strong>Kinetic Energy:</strong> <span id="energy-metric">0</span> Joules</p>
                     <p><strong>Momentum:</strong> <span id="momentum-metric">0</span> kg·m/s</p>
                 </div>
             </div>
-
+                <!-- Ammunition Index Card -->
                 <div class="table-card" id="ammo-index">
                  <h3>Known Ammunition Index</h3>
                  <div class="table-scroll-container"> 
@@ -56,7 +60,7 @@
             </div>
 
         </div>
-
+        <!-- Trajectory Graph Card -->
         <div class="graph-card" id="trajectory">
             <h3>Trajectory Drop Comparison (Inches vs Yards)</h3>
             <p class="graph-sub">Comparing your custom input against indexing standards</p>
@@ -64,7 +68,7 @@
                 <span class="loading-text">Graph will render after clicking Calculate...</span>
             </div>
         </div>
-        
+    <!-- PyScript for Ballistics Calculations -->
     <script type="py" src="ballisticCalculations.py" config="pyscript.json"></script>
     </body>
 </html>

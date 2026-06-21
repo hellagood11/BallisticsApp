@@ -10,6 +10,7 @@
         <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
     </head>
     <body>
+        <!-- Navigation Bar -->
         <nav class="app-nav">
             <div class="nav-brand">
                 <h1>Ballistics & Ammunition Analytics Dashboard</h1>
@@ -20,11 +21,11 @@
                 <li><a href="#cartridge-overview">Cartridge Reloading</a></li>
             </ul>
         </nav>
-
+        <!-- Cartridge Reloading Overview Card -->
         <div class="page-card" id="cartridge-overview">
             <h2>Cartridge Reloading</h2>
             <p>Filter both pistol and rifle reloading data by source and cartridge.</p>
-
+            <!-- Filter Controls -->
             <div class="filter-controls">
                 <div class="input-group">
                     <label for="source-filter">Source:</label>
@@ -34,7 +35,7 @@
                         <option value="Rifle">Rifle</option>
                     </select>
                 </div>
-
+                <!-- Cartridge Filter will be dynamically populated based on selected data -->
                 <div class="input-group">
                     <label for="cartridge-filter">Cartridge:</label>
                     <select id="cartridge-filter">
@@ -42,14 +43,14 @@
                     </select>
                 </div>
             </div>
-
+            <!-- Reloading Data Table -->
             <p id="reload-summary" class="graph-sub">Loading reloading data...</p>
 
             <div class="table-scroll-container">
                 <div id="reload-table-output">Loading...</div>
             </div>
         </div>
-
+        <!-- PyScript for Cartridge Reloading Data -->
         <script type="py" src="cartridgeReloading.py" config="pyscript.json"></script>
     </body>
 </html>
