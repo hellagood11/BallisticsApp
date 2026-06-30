@@ -92,6 +92,7 @@ def load_ammo_table():
                     <th>Type</th>
                     <th>Velocity (FPS)</th>
                     <th>Energy (ft-lbs)</th>
+                    <th>Recoil</th>
                     <th>Score</th>
                 </tr>
             </thead>
@@ -108,6 +109,7 @@ def load_ammo_table():
                     <td>{row['Type'].capitalize()}</td>
                     <td>{row['FPS']}</td>
                     <td>{row['Energy']}</td>
+                    <td>{row['Recoil']}</td>
                     <td>{float(row['Score']):.3f}</td>
                 </tr>
                 """
