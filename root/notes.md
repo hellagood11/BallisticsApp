@@ -24,3 +24,6 @@ Permanent Cavitation
 : Hole created as bullet passes through target. Channel is same diameter as bullet and is a function of the rounds penetration and expansion
 Temporary Cavitation
 : The "waves" that are caused from the impact and travel of the bullet through tissue
+
+## PyBallisticCalc
+PyBallisticCalc is a open-source python library that has built in calculations for this specific application. More specifically it can give you a windage card based on your zeroing distance and wind amongst other features. 
