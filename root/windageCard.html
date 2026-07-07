@@ -29,9 +29,24 @@
                 <h2>Windage & Elevation Calculator</h2>
                 <!-- Input Fields -->
                 <div class="input-grid-layout">
+                    <!-- Ballistic Table Selection -->
+                    <div class="input-group">
+                        <label for="ballisticTableSelection">Ballistic Table :</label>
+                        <select id="ballisticTableSelection">
+                            <option value="TableG1">Table G1 - Flat base/traditional (i.e. 9mm, 45 ACP)</option>
+                            <option value="TableG7">Table G7 - Boat tail (i.e. .308 Win, 6.5 Creedmoor)</option>
+                            <option value="TableG2">Table G2 - Artillery</option>
+                            <option value="TableG5">Table G5 - Short boat tail</option>
+                            <option value="TableG6">Table G6 - Flat base spire point</option>
+                            <option value="TableG8">Table G8 - Flat base secant ogive</option>
+                            <option value="TableGI">Table GI - Early 20th Century Standard Tables</option>
+                            <option value="TableGS">Table GS - Muzzle loaders</option>
+                            <option value="TableRA4">Table RA4 - Rimfire</option>
+                        </select>
+                    </div>
                     <!-- Ballistic Coefficient -->
                     <div class="input-group">
-                        <label for="bc">Ballistic Coefficient (G7):</label>
+                        <label for="bc">Ballistic Coefficient :</label>
                         <input type="number" id="bc" placeholder="e.g., 0.4">
                     </div>
                     <!-- Muzzle Velocity -->

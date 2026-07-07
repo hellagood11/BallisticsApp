@@ -13,9 +13,29 @@ def calculate_trajectory(event):
     windDirection = float(document.querySelector("#windDir").value)
     maxRange = float(document.querySelector("#maxRange").value)
     rangeStep = float(document.querySelector("#rangeStep").value)
+    tableSelection = document.querySelector("#ballisticTableSelection").value
+    match tableSelection:
+        case "TableG1":
+            tableSelection = TableG1
+        case "TableG7":
+            tableSelection = TableG7
+        case "TableG2":
+            tableSelection = TableG2
+        case "TableG5":
+            tableSelection = TableG5
+        case "TableG6":
+            tableSelection = TableG6
+        case "TableG8":
+            tableSelection = TableG8
+        case "TableGI":
+            tableSelection = TableGI
+        case "TableGS":
+            tableSelection = TableGS
+        case "TableRA4":
+            tableSelection = TableRA4
 
     #calculating the zero elevation
-    zero = Shot(weapon=Weapon(sight_height=sightHeight), ammo=Ammo(DragModel(bc, TableG7), mv=Velocity.FPS(velocity)))
+    zero = Shot(weapon=Weapon(sight_height=sightHeight), ammo=Ammo(DragModel(bc, tableSelection), mv=Velocity.FPS(velocity)))
     calc = Calculator()
     #setting the zero distance to 100 yards for the calculation
     zero_distance = Distance.Yard(100)  # Assuming zero at 100 yards
