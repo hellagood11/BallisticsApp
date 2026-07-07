@@ -23,28 +23,33 @@
                 <li><a href="windageCard.html">Windage & Elevation</a></li>
             </ul>
         </nav>
-
+        <!-- Windage & Elevation Calculator Card -->
         <div class="dashboard-wrapper">
             <div class="calculator-card" id="windage-elevationCalculator">
                 <h2>Windage & Elevation Calculator</h2>
-
+                <!-- Input Fields -->
                 <div class="input-grid-layout">
+                    <!-- Ballistic Coefficient -->
                     <div class="input-group">
                         <label for="bc">Ballistic Coefficient (G7):</label>
                         <input type="number" id="bc" placeholder="e.g., 0.4">
                     </div>
+                    <!-- Muzzle Velocity -->
                     <div class="input-group">
                         <label for="velocity">Muzzle Velocity (FPS):</label>
                         <input type="number" id="velocity" placeholder="e.g., 1150">
                     </div>
+                    <!-- Sight Height -->
                     <div class="input-group">
                         <label for="sightHeight">Sight Height (inches):</label>
                         <input type="number" id="sightHeight" placeholder="e.g., 1.5">
                     </div>
+                    <!-- Wind Speed -->
                     <div class="input-group">
                         <label for="windSpeed">Wind Speed (mph):</label>
                         <input type="number" id="windSpeed" placeholder="e.g., 10">
                     </div>
+                    <!-- Wind Direction -->
                     <div class="input-group">
                        <label for="windDir">Wind Direction (clockwise):</label> 
                        <select id="windDir">
@@ -62,36 +67,39 @@
                             <option value="11">11 o'clock</option>
                        </select>
                     </div>
-
+                    <!-- Maximum Range -->
                     <div class="input-group">
                         <label for="maxRange">Maximum Range (yards):</label>
                         <input type="number" id="maxRange" placeholder="e.g., 1000">
                     </div>
+                    <!-- Range Step -->
                     <div class="input-group">
                         <label for="rangeStep">Range Step (yards):</label>
                         <input type="number" id="rangeStep" placeholder="e.g., 100">
                     </div>
                 </div>
+                <!-- Calculate Button -->
                 <button id="wind-calc-btn">Calculate</button>
-
+                <!-- Zero Adjustment Profile Results Display-->
                 <div class="results">
                     <h3>Zero Adjustment Profile</h3>
-                    <p id="zeroOutput" class="zeroString">Loading...</p>
+                    <p id="zeroOutput" class="zeroString">Waiting for input...</p>
                 </div>
             </div>  
-            
+            <!-- Windage & Elevation Table Results Card -->
             <div class="table-card" id="windageElevationTable">
                 <h3>Windage & Elevation Table</h3>
                 <div class="table-scroll-container">
-                    <div id="windageElevationTableOutput">Loading...</div>
+                    <div id="windageElevationTableOutput">Waiting for input...</div>
                 </div>
             </div>
         </div>
-
+        <!-- Windage & Elevation Graph Card -->
         <div class="graph-card" id="windageElevationGraph">
             <h3>Windage & Elevation Graph</h3>
-            <div id="windageElevationGraphOutput">Loading...</div>
+            <div id="windageElevationGraphOutput">Waiting for input...</div>
         </div>
+        <!-- PyScript for Windage & Elevation Calculations -->
         <script type="py" src="windageCardCalc.py" config="pyscript.json"></script>
     </body>
 </html>
