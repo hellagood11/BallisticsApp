@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ballistics Calculator</title>
+        
+        <link rel="stylesheet" href="style.css" />
+
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+        <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    </head>
+    <body>
+        <!-- Navigation Bar -->
+        <nav class="app-nav">
+            <div class="nav-brand">
+                <h1>Ballistics & Ammunition Analytics Dashboard</h1>
+                <p>Real-time physics calculation and multi-criteria performance mapping</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cartridgeReloading.html">Cartridge Reloading</a></li>
+                <li><a href="windageCard.html">Windage & Elevation</a></li>
+            </ul>
+        </nav>
+        <!-- Windage & Elevation Calculator Card -->
+        <div class="dashboard-wrapper">
+            <div class="calculator-card" id="windage-elevationCalculator">
+                <h2>Windage & Elevation Calculator</h2>
+                <!-- Input Fields -->
+                <div class="input-grid-layout">
+                    <!-- Ballistic Table Selection -->
+                    <div class="input-group">
+                        <label for="ballisticTableSelection">Ballistic Table :</label>
+                        <select id="ballisticTableSelection">
+                            <option value="TableG1">Table G1 - Flat base/traditional (i.e. 9mm, 45 ACP)</option>
+                            <option value="TableG7">Table G7 - Boat tail (i.e. .308 Win, 6.5 Creedmoor)</option>
+                            <option value="TableG2">Table G2 - Artillery</option>
+                            <option value="TableG5">Table G5 - Short boat tail</option>
+                            <option value="TableG6">Table G6 - Flat base spire point</option>
+                            <option value="TableG8">Table G8 - Flat base secant ogive</option>
+                            <option value="TableGI">Table GI - Early 20th Century Standard Tables</option>
+                            <option value="TableGS">Table GS - Muzzle loaders</option>
+                            <option value="TableRA4">Table RA4 - Rimfire</option>
+                        </select>
+                    </div>
+                    <!-- Ballistic Coefficient -->
+                    <div class="input-group">
+                        <label for="bc">Ballistic Coefficient :</label>
+                        <input type="number" id="bc" placeholder="e.g., 0.4">
+                    </div>
+                    <!-- Muzzle Velocity -->
+                    <div class="input-group">
+                        <label for="velocity">Muzzle Velocity (FPS):</label>
+                        <input type="number" id="velocity" placeholder="e.g., 1150">
+                    </div>
+                    <!-- Sight Height -->
+                    <div class="input-group">
+                        <label for="sightHeight">Sight Height (inches):</label>
+                        <input type="number" id="sightHeight" placeholder="e.g., 1.5">
+                    </div>
+                    <!-- Wind Speed -->
+                    <div class="input-group">
+                        <label for="windSpeed">Wind Speed (mph):</label>
+                        <input type="number" id="windSpeed" placeholder="e.g., 10">
+                    </div>
+                    <!-- Wind Direction -->
+                    <div class="input-group">
+                       <label for="windDir">Wind Direction (clockwise):</label> 
+                       <select id="windDir">
+                            <option value="12">12 o'clock (headwind)</option>
+                            <option value="1">1 o'clock</option>
+                            <option value="2">2 o'clock</option>
+                            <option value="3">3 o'clock (90° L to R)</option>
+                            <option value="4">4 o'clock</option>
+                            <option value="5">5 o'clock</option>
+                            <option value="6">6 o'clock (tailwind)</option>
+                            <option value="7">7 o'clock</option>
+                            <option value="8">8 o'clock</option>
+                            <option value="9">9 o'clock (90° R to L)</option>
+                            <option value="10">10 o'clock</option>
+                            <option value="11">11 o'clock</option>
+                       </select>
+                    </div>
+                    <!-- Maximum Range -->
+                    <div class="input-group">
+                        <label for="maxRange">Maximum Range (yards):</label>
+                        <input type="number" id="maxRange" placeholder="e.g., 1000">
+                    </div>
+                    <!-- Range Step -->
+                    <div class="input-group">
+                        <label for="rangeStep">Range Step (yards):</label>
+                        <input type="number" id="rangeStep" placeholder="e.g., 100">
+                    </div>
+                </div>
+                <!-- Calculate Button -->
+                <button id="wind-calc-btn">Calculate</button>
+                <!-- Zero Adjustment Profile Results Display-->
+                <div class="results">
+                    <h3>Zero Adjustment Profile</h3>
+                    <p id="zeroOutput" class="zeroString">Waiting for input...</p>
+                </div>
+            </div>  
+            <!-- Windage & Elevation Table Results Card -->
+            <div class="table-card" id="windageElevationTable">
+                <h3>Windage & Elevation Table</h3>
+                <div class="table-scroll-container">
+                    <div id="windageElevationTableOutput">Waiting for input...</div>
+                </div>
+            </div>
+        </div>
+        <!-- Windage & Elevation Graph Card -->
+        <div class="graph-card" id="windageElevationGraph">
+            <h3>Windage & Elevation Graph</h3>
+            <div id="windageElevationGraphOutput">Waiting for input...</div>
+        </div>
+        <!-- PyScript for Windage & Elevation Calculations -->
+        <script type="py" src="windageCardCalc.py" config="pyscript.json"></script>
+    </body>
+</html>
