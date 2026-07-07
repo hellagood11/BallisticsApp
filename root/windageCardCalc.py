@@ -1,6 +1,8 @@
 import pandas as pd
 from py_ballisticcalc import *
 from pyscript import document, when
+import matplotlib.pyplot as plt
+from io import StringIO
 
 @when("click", "#wind-calc-btn")
 def calculate_trajectory(event):
@@ -60,3 +62,33 @@ def calculate_trajectory(event):
     html_table = df.to_html(index=False, classes='data-table', border=0, justify='center', escape=False)
     document.querySelector("#windageElevationTableOutput").innerHTML = html_table
 
+    # Create the stacked subplots sharing an x-axis with standard clean backgrounds
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(9, 6), sharex=True, constrained_layout=True)
+
+    # Top Subplot: Real-world Drop Profile
+    ax1.plot(df["Distance (yd)"], df["Height (in)"], color="#1f77b4", marker="o", linewidth=2.5, markersize=4, label="Bullet Path")
+    ax1.axhline(0, color="#7f7f7f", linestyle="--", linewidth=1, label="Line of Sight (Zero)") # Zero reference line
+    ax1.set_title("Vertical Trajectory (Drop Profile)", fontsize=11, fontweight="bold", loc="left")
+    ax1.set_ylabel("Drop / Height (in)")
+    ax1.grid(True, alpha=0.5, linestyle="--")
+    ax1.legend(loc="lower left")
+    
+    # CRITICAL: Invert the y-axis so gravity visually pulls the path down
+    ax1.invert_yaxis()
+
+    # Bottom Subplot: Wind Drift Profile
+    ax2.plot(df["Distance (yd)"], df["Windage (in)"], color="#ff7f0e", marker="o", linewidth=2.5, markersize=4, label="Wind Drift")
+    ax2.axhline(0, color="#7f7f7f", linestyle="--", linewidth=1) # Centerline reference
+    ax2.set_title("Horizontal Deflection (Windage Drift)", fontsize=11, fontweight="bold", loc="left")
+    ax2.set_xlabel("Distance (Yards)")
+    ax2.set_ylabel("Windage Drift (in)")
+    ax2.grid(True, alpha=0.5, linestyle="--")
+    ax2.legend(loc="upper left")
+
+    # Save to SVG buffer to match your layout implementation flawlessly
+    svg_buffer = StringIO()
+    fig.savefig(svg_buffer, format="svg", bbox_inches="tight")
+    plt.close(fig)
+
+    # Inject the responsive vector graphic straight into your dashboard placeholder
+    document.querySelector("#windageElevationGraphOutput").innerHTML = svg_buffer.getvalue()
