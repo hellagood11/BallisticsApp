@@ -23,5 +23,75 @@
                 <li><a href="windageCard.html">Windage & Elevation</a></li>
             </ul>
         </nav>
+
+        <div class="dashboard-wrapper">
+            <div class="calculator-card" id="windage-elevationCalculator">
+                <h2>Windage & Elevation Calculator</h2>
+
+                <div class="input-grid-layout">
+                    <div class="input-group">
+                        <label for="bc">Ballistic Coefficient (G7):</label>
+                        <input type="number" id="bc" placeholder="e.g., 0.4">
+                    </div>
+                    <div class="input-group">
+                        <label for="velocity">Muzzle Velocity (FPS):</label>
+                        <input type="number" id="velocity" placeholder="e.g., 1150">
+                    </div>
+                    <div class="input-group">
+                        <label for="sightHeight">Sight Height (inches):</label>
+                        <input type="number" id="sightHeight" placeholder="e.g., 1.5">
+                    </div>
+                    <div class="input-group">
+                        <label for="windSpeed">Wind Speed (mph):</label>
+                        <input type="number" id="windSpeed" placeholder="e.g., 10">
+                    </div>
+                    <div class="input-group">
+                       <label for="windDir">Wind Direction (clockwise):</label> 
+                       <select id="windDir">
+                            <option value="12">12 o'clock (headwind)</option>
+                            <option value="1">1 o'clock</option>
+                            <option value="2">2 o'clock</option>
+                            <option value="3">3 o'clock (90° L to R)</option>
+                            <option value="4">4 o'clock</option>
+                            <option value="5">5 o'clock</option>
+                            <option value="6">6 o'clock (tailwind)</option>
+                            <option value="7">7 o'clock</option>
+                            <option value="8">8 o'clock</option>
+                            <option value="9">9 o'clock (90° R to L)</option>
+                            <option value="10">10 o'clock</option>
+                            <option value="11">11 o'clock</option>
+                       </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="maxRange">Maximum Range (yards):</label>
+                        <input type="number" id="maxRange" placeholder="e.g., 1000">
+                    </div>
+                    <div class="input-group">
+                        <label for="rangeStep">Range Step (yards):</label>
+                        <input type="number" id="rangeStep" placeholder="e.g., 100">
+                    </div>
+                </div>
+                <button id="calc-btn">Calculate</button>
+
+                <div class="results">
+                    <h3>Zero Adjustment Profile</h3>
+                    <p id="zeroOutput" class="zeroString">Loading...</p>
+                </div>
+            </div>  
+            
+            <div class="table-card" id="windageElevationTable">
+                <h3>Windage & Elevation Table</h3>
+                <div class="table-scroll-container">
+                    <div id="windageElevationTableOutput">Loading...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="graph-card" id="windageElevationGraph">
+            <h3>Windage & Elevation Graph</h3>
+            <div id="windageElevationGraphOutput">Loading...</div>
+        </div>
+        <script type="py" src="windageCardCalc.py" config="pyscript.json"></script>
     </body>
 </html>
